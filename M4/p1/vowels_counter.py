@@ -19,7 +19,7 @@ def main():
     if count == 0:
         print("0")
     else:
-        print("Vowels are : "+ str(count))
+        print(count)
 
 if __name__ == "__main__":
     main()
