@@ -6,10 +6,10 @@ def main():
     Read any number from the input, store it in variable int_input.
     '''
     number = int(input())
-    sum1 = 0
+    sum1 = 1
     while number != 0:
         msit = number % 10
-        sum1 = sum1 + msit
+        sum1 = sum1 * msit
         number = number // 10
     print(sum1)
 
