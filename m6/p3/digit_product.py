@@ -15,7 +15,7 @@ def main():
             msit = number % 10
             sum1 = sum1 * msit
             number = number // 10
-            count =0
+            count = 0
     if count == 0:
         print(sum1)
     else:
