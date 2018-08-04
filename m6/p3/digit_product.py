@@ -7,14 +7,19 @@ def main():
     '''
     number = int(input())
     sum1 = 1
+    count = 1
     while number != 0:
-        msit = number % 10
-        sum1 = sum1 * msit
-        number = number // 10
-    if number == 0:
-        print("0")
-    else:
+        if number == 0:
+            count = 1
+        else:
+            msit = number % 10
+            sum1 = sum1 * msit
+            number = number // 10
+            count =0
+    if count == 0:
         print(sum1)
+    else:
+        print("0")
 
 if __name__ == "__main__":
     main()
