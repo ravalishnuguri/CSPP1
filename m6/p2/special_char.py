@@ -7,7 +7,16 @@ def main():
     '''
     Read string from the input, store it in variable str_input.
     '''
-    str_input = input()
+    str1 = str(input())
+    str2 = "!@#$%^&*"
+    count = 0
+    for i in range(0,len(str1),1):
+    	if(i == '!'and i=='@' and i=='#' and i=='$' and i=='%' and i=='^' and i=='&' and i=='*'):
+    		count = count+1
+    	if(count == 1):
+    		str1[i] = " "
+    		
+    print(str1)
 
 if __name__ == "__main__":
     main()
