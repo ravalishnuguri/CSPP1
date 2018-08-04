@@ -1,6 +1,4 @@
-i = 1
-while True:
-	if i%7 == 0:
-		break
-	print(i)
-	i += 1
+st = "deepak"
+if st[2:4:1] != 'ep' or st[::-1] == 'kaped' or st[::] == "deepak":
+	if st[-1:-3:-1] == "ka":
+		print(st[-1:-5:-1])
