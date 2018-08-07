@@ -14,8 +14,7 @@ def factorial(value):
     # Your code here
     if value == 1:
         return 1
-    if value != 1:
-        return value*factorial(value-1)
+    return value*factorial(value-1)
 
 
 
