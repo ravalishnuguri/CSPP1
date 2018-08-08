@@ -15,7 +15,17 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-    pass
+    count = 0
+    length = len(secret_word)
+    for index in secret_word:
+        if index in letters_guessed:
+            count += 1
+        if count == length:
+            return True
+        return False
+
+
+
 
 def main():
     '''
