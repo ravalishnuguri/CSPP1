@@ -11,10 +11,11 @@ def oddtuples(atup):
     returns: tuple, every other element of aTup.
     '''
     # Your Code Here
-    new = ()
-    for i in range(0, len(atup), 2):
-        new += atup[i]
-    return new
+    #new = ()
+    #for i in range(0, len(atup), 2):
+    #    new += (atup[i],)
+    #return new
+    return atup[0::2]
 
 def main():
     '''using tuple to print out odd elements'''
