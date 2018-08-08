@@ -20,8 +20,9 @@ def is_word_guessed(secret_word, letters_guessed):
     for index in secret_word:
         if index in letters_guessed:
             count += 1
-        if count == length:
-            return True
+    if count == length:
+        return True
+    else:
         return False
 
 
