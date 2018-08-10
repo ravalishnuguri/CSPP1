@@ -26,12 +26,12 @@ def get_word_score(word, number):
     'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3,\
     'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10}
     str1 = word.lower()
-    score = 0
+    points = 0
     index = 0
     while index < len(str1):
-        score = score + scrabblelettersvalue[str1[index]]
+        points = points + scrabblelettersvalue[str1[index]]
         index = index + 1
-    result = score * len(str1)
+    result = points * len(str1)
     if len(str1) == number:
         return result + 50
     return result

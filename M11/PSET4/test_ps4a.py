@@ -9,7 +9,7 @@ from ps4a import *
 # as normal)
 
 
-def test_getWordScore(words, n):
+def test_getWordScore():
     """
     Unit test for getWordScore
     """
