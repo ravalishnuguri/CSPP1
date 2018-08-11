@@ -43,7 +43,7 @@ def payingdebtoffinayear(balance, annualinterestrate):
             month -= 1
         balance = monunpaidbal
         minmonpay += 10
-    print("lowest payment:", minmonpay - 10)
+    print("Lowest Payment:", minmonpay - 10)
 
 def main():
     '''a'''
