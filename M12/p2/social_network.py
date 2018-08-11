@@ -55,7 +55,6 @@ def delete_person(network, arg1):
             network.pop(arg1)
         network['d'] = []
         return network
-        ne
 
 def main():
     '''
