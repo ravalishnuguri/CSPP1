@@ -46,7 +46,6 @@ def create_social_network(data):
         return {}
     else:
         str1 = data.split('\n')
-        print(str1)
         newdict = {}
         str2 = []
     for i in str1:
@@ -57,7 +56,6 @@ def create_social_network(data):
     for k in str2:
         if k[0] != "":
             newdict[k[0]] = k[1].split(",")
-            print(newdict[k[0]])
     return newdict
 
 def main():
