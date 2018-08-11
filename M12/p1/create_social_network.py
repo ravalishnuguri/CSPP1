@@ -44,10 +44,9 @@ def create_social_network(data):
     #print(newdict)
     if "follows" not in data:
         return {}
-    else:
-        str1 = data.split('\n')
-        newdict = {}
-        str2 = []
+    str1 = data.split('\n')
+    newdict = {}
+    str2 = []
     for i in str1:
         newsplit = i.split('follows')
         for j, val in enumerate(newsplit):
