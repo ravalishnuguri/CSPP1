@@ -61,7 +61,7 @@ def payingDebtOffInAYear(balance, annualInterestRate):
 			high = minPay
 		minPay = (high + low)/2.0
 	minPay = round(minPay, 2)
-	print('lowest payment: ' + str(minPay))
+	return ('lowest payment: ' + str(minPay))
 
 
 def main():
