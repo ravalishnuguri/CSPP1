@@ -46,16 +46,18 @@ def create_social_network(data):
         return {}
     else:
         str1 = data.split('\n')
+        print(str1)
         newdict = {}
         str2 = []
     for i in str1:
         newsplit = i.split('follows')
-        for j, val in enumerate(newsplit): #range(newsplit)
-            newsplit[j] = val.replace(',', '') #replace(','"")
+        for j, val in enumerate(newsplit):
+            newsplit[j] = val.replace(' ', '')
         str2.append(newsplit)
     for k in str2:
         if k[0] != "":
             newdict[k[0]] = k[1].split(",")
+            print(newdict[k[0]])
     return newdict
 
 def main():
