@@ -36,6 +36,7 @@ def unfollow(network, arg1, arg2):
             network[arg1].remove(arg2)
     return network
 
+
 def delete_person(network, arg1):
     '''
         2 arguments are passed to this function
@@ -47,10 +48,12 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-
-    if arg1 in network:
-        network.pop(arg1)
-    return network
+    for i in network:
+        if arg1 in network[i]:
+            del network[i[arg1]]
+        if arg1 in network:
+            network.pop(arg1)
+        return network
 
 def main():
     '''
