@@ -2,3 +2,9 @@ git status
 git add  .
 git commit -m "your message"
 git push  -u origin master
+
+f = open("filename.txt", 'r')
+b = str(f.read())
+
+
+wordlist = b.splitlines()
