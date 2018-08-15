@@ -54,6 +54,97 @@ def is_flush(hand):
             return False
     return True
 
+
+
+
+def  is_twopair(hand):
+    '''Two pair is a poker hand containing two cards of the same rank,
+    two cards of another rank and one card of a third rank (the kicker)'''
+    newhand = sorted(sort(hand))
+    sethand = set(newhand)
+    length1 = len(newhand)
+    length2 = len(sethand)
+    if length1 - length2 == 2:
+        return True
+    return False
+
+
+def is_fullhouse(hand):
+    '''A full house, also known as a full boat (and originally called a full hand),
+    is a poker hand containing three cards of one rank and two cards of another rank'''
+    flag = 0
+    index = 0
+    newhand = sorted(sort(hand))
+    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == \
+    newhand[index+4]:
+        flag += 1
+    elif newhand[index+3] == newhand[index+4] and \
+    newhand[index] == newhand[index+1] == newhand[index+2]:
+        flag += 1
+    if flag == 1:
+        return True
+    return False
+
+
+
+def is_onepair(hand):
+    '''One pair, or simply a pair, is a poker hand containing two cards
+    of the same rank and three cards of three other ranks (the kickers)'''
+    newhand = sorted(sort(hand))
+    sethand = set(newhand)
+    length1 = len(newhand)
+    length2 = len(sethand)
+    if length1 - length2 == 1:
+        return True
+    return False
+
+
+def is_threeofakind(hand):
+    '''Three of a kind, also known as trips or a set, is a poker hand containing three cards
+    of the same rank and two cards of two other ranks (the kickers)'''
+    flag = 0
+    newhand = sorted(sort(hand))
+    length = len(newhand)
+    for index in range(length -2):
+        if newhand[index] == newhand[index+1] == newhand[index+2]:
+            flag += 1
+    if flag == 1:
+        return True
+    return False
+
+
+def is_fourofakind(hand):
+    '''Four of a kind, also known as quads, is a poker hand containing four cards
+    of the same rank and one card of another rank (the kicker)'''
+    flag = 0
+    newhand = sorted(sort(hand))
+    length = len(newhand)
+    for index in range(length - 3):
+        if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3]:
+            flag += 1
+    if flag == 1:
+        return True
+    return False
+
+def sort(hand):
+    '''this function sorts  and change the letter values to numbers for example,
+    it will change 'J' value as 11'''
+    newhand = []
+    for index in range(len(hand)):
+        if hand[index][0] == 'A':
+            newhand.append(14)
+        elif hand[index][0] == 'K':
+            newhand.append(13)
+        elif hand[index][0] == 'Q':
+            newhand.append(12)
+        elif hand[index][0] == 'J':
+            newhand.append(11)
+        elif hand[index][0] == 'T':
+            newhand.append(10)
+        else:
+            newhand.append(int(hand[index][0]))
+    return newhand
+
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -79,10 +170,20 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 3
+        return 8
+    if is_fullhouse(hand):
+        return 7
     if is_flush(hand):
-        return 2
+        return 6
     if is_straight(hand):
+        return 5
+    if is_fourofakind(hand):
+        return 4
+    if is_threeofakind(hand):
+        return 3
+    if is_twopair(hand):
+        return 2
+    if is_onepair(hand):
         return 1
     return 0
 
