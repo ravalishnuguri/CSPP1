@@ -102,7 +102,6 @@ def is_highcard(hand):
     flag = 0
     newhand = sorted(sort(hand))
     length = len(newhand)
-    return newhand[length -1]
     for index in range(length):
         if newhand[index] == max(newhand):
             flag = 1
