@@ -119,7 +119,7 @@ def is_fourofakind(hand):
     flag = 0
     newhand = sorted(sort(hand))
     length = len(newhand)
-    for index in range(length - 3):
+    for index in range(length - 1):
         if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3]:
             flag += 1
     if flag == 1:
@@ -130,8 +130,8 @@ def is_fourofakind(hand):
 def is_highcard(hand):
     '''High card, also known as no pair or simply nothing, is a poker hand containing five cards not all of
     sequential rank or of the same suit'''
-    #newhand = sorted(sort(hand))
-    #for index in newhand:
+    newhand = sorted(sort(hand))
+    for index in newhand:
 
 
 
