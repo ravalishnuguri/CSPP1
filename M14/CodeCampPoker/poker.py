@@ -126,6 +126,24 @@ def is_fourofakind(hand):
         return True
     return False
 
+def is_fiveofakind(hand):
+    '''Five of a kind is a poker hand containing five cards of the same rank'''
+    flag = 0
+    newhand = sorted(sort(hand))
+    length = len(newhand)
+    for index in range(length - 3):
+        if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] ==newhand[index+4]:
+            flag += 1
+    if flag == 1:
+        return True
+    return False
+
+def is_highcard(hand):
+    '''High card, also known as no pair or simply nothing, is a poker hand containing five cards not all of
+    sequential rank or of the same suit'''
+    flag
+
+
 def sort(hand):
     '''this function sorts  and change the letter values to numbers for example,
     it will change 'J' value as 11'''
