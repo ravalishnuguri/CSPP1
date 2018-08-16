@@ -63,9 +63,17 @@ def is_onepair(hand):
     sethand = set(sorted(newhand))
     length1 = len(newhand)
     length2 = len(sethand)
-    if length1 - length2 == 1:
-        return True
-    return False
+    # if length1 - length2 == 1:
+    #     return True
+    # return False
+    new = []
+    for i in newhand:
+        if newhand.count(i) == 2:
+            new.append(i)
+    if len(new) == 0:
+        return False
+    maximum = max(new)
+    return (maximum + 1)
 
 
 def is_threeofakind(hand):
