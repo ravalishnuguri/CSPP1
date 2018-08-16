@@ -171,7 +171,6 @@ def hand_rank(hand):
     if is_twopair(hand):
         return 3
     if is_onepair(hand):
-        print("one pair")
         return 2
     if is_highcard(hand):
         return 1
