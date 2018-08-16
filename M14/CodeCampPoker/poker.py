@@ -99,8 +99,15 @@ def is_fourofakind(hand):
 def is_highcard(hand):
     '''High card, also known as no pair or simply nothing, is a poker hand containing five cards not all of
     sequential rank or of the same suit'''
-    #newhand = sorted(sort(hand))
-    #for index in newhand:
+    flag = 0
+    newhand = sorted(sort(hand))
+    length = len(newhand)
+    for index in range(length):
+        if newhand[index] == max[hand[index]]:
+            flag = 1
+    if flag == 1:
+        return True
+    return False
 
 
 
@@ -148,20 +155,22 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return 9
     if is_threeofakind(hand) and is_onepair(hand):
-        return 7
+        return 8
     if is_flush(hand):
-        return 6
+        return 7
     if is_straight(hand):
-        return 5
+        return 6
     if is_fourofakind(hand):
-        return 4
+        return 5
     if is_threeofakind(hand):
-        return 3
+        return 4
     if is_twopair(hand):
-        return 2
+        return 3
     if is_onepair(hand):
+        return 2
+    if is_highcard(hand):
         return 1
     return 0
 
