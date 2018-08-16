@@ -64,9 +64,10 @@ def is_onepair(hand):
     sethand = set(newhand)
     length1 = len(newhand)
     length2 = len(sethand)
+    maximum = newhand[length1 - 1]
     if length1 - length2 == 1:
         flag = 1
-    if newhand(length1 -1) == max(newhand):
+    if maximum == max(newhand):
         flag = 1
     if flag == 1:
         return True
