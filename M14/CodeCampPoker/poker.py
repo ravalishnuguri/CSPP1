@@ -75,8 +75,7 @@ def is_fullhouse(hand):
     flag = 0
     index = 0
     newhand = sorted(sort(hand))
-    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == \
-    newhand[index+4]:
+    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == newhand[index+4]:
         flag += 1
     elif newhand[index+3] == newhand[index+4] and \
     newhand[index] == newhand[index+1] == newhand[index+2]:
@@ -91,7 +90,9 @@ def is_onepair(hand):
     '''One pair, or simply a pair, is a poker hand containing two cards
     of the same rank and three cards of three other ranks (the kickers)'''
     newhand = sorted(sort(hand))
+    print(newhand)
     sethand = set(newhand)
+    print(sethand)
     length1 = len(newhand)
     length2 = len(sethand)
     if length1 - length2 == 1:
@@ -130,6 +131,9 @@ def is_fourofakind(hand):
 def is_highcard(hand):
     '''High card, also known as no pair or simply nothing, is a poker hand containing five cards not all of
     sequential rank or of the same suit'''
+    #newhand = sorted(sort(hand))
+    #for index in newhand:
+
 
 
 def sort(hand):
