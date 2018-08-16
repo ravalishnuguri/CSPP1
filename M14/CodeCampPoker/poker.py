@@ -65,7 +65,7 @@ def is_onepair(hand):
     length2 = len(sethand)
     if length1 - length2 == 1:
         for index in sethand:
-            if sortlist.count(index) == 2:
+            if newhand.count(index) == 2:
                 return index/10
 
 
