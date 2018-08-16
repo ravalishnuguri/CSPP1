@@ -102,7 +102,9 @@ def is_highcard(hand):
     #flag = 0
     newhand = sorted(sort(hand))
     length = len(newhand)
-    return newhand[length-1]
+    if length == 5 and not is_flush(hand):
+        return max(newhand)/100
+    return False
     # for index in range(length):
     #     if newhand[index] == max(newhand):
     #         flag = 1
