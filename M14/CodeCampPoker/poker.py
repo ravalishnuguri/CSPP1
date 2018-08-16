@@ -101,9 +101,7 @@ def is_highcard(hand):
     sequential rank or of the same suit'''
     flag = 0
     newhand = sorted(sort(hand))
-    print(newhand)
     length = len(newhand)
-    print(max(newhand))
     for index in range(length-1):
         if newhand[index] == max(newhand):
             flag = 1
