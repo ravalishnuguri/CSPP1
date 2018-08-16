@@ -36,9 +36,9 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     for index in range(len(hand) - 1):
-        if hand[index][1] == hand[index+1][1]:
-            return True
-    return False
+        if hand[index][1] != hand[index+1][1]:
+            return False
+    return True
 
 
 
@@ -102,10 +102,10 @@ def is_highcard(hand):
     #flag = 0
     newhand = sorted(sort(hand))
     return max(newhand)
-    # length = len(newhand)
-    # if length == 5 and not is_flush(hand):
-    #     return max(newhand)/100
-    # return False
+    length = len(newhand)
+    if length == 5 and not is_flush(hand):
+        return max(newhand)/100
+    return False
     # for index in range(length):
     #     if newhand[index] == max(newhand):
     #         flag = 1
