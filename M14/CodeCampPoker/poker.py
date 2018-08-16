@@ -36,9 +36,9 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     for index in range(len(hand) - 1):
-        if hand[index][1] != hand[index+1][1]:
-            return False
-    return True
+        if hand[index][1] == hand[index+1][1]:
+            return True
+    return False
 
 
 
