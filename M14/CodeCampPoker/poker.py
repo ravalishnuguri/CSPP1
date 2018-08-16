@@ -172,7 +172,8 @@ def hand_rank(hand):
         return 2
     if is_onepair(hand):
         return 1
-    return is_highcard(hand)
+    if is_highcard(hand):
+        return 0
 
 def poker(hands):
     '''
