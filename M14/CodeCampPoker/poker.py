@@ -75,9 +75,11 @@ def is_fullhouse(hand):
     flag = 0
     index = 0
     newhand = sorted(sort(hand))
-    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == newhand[index+4]:
+    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == \
+    newhand[index+4]:
         flag += 1
-    elif newhand[index+3] == newhand[index+4] and newhand[index] == newhand[index+1] == newhand[index+2]:
+    elif newhand[index+3] == newhand[index+4] and \
+    newhand[index] == newhand[index+1] == newhand[index+2]:
         flag += 1
     if flag == 1:
         return True
