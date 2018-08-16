@@ -101,7 +101,6 @@ def is_highcard(hand):
     not all of sequential rank or of the same suit'''
     #flag = 0
     newhand = sorted(sort(hand))
-    return max(newhand)
     length = len(newhand)
     if length == 5 and not is_flush(hand):
         return max(newhand)/100
