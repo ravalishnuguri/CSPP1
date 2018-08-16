@@ -55,23 +55,6 @@ def  is_twopair(hand):
     return False
 
 
-def is_fullhouse(hand):
-    '''A full house, also known as a full boat (and originally called a full hand),
-    is a poker hand containing three cards of one rank and two cards of another rank'''
-    flag = 0
-    index = 0
-    newhand = sorted(sort(hand))
-    if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] == \
-    newhand[index+4]:
-        flag += 1
-    elif newhand[index+3] == newhand[index+4] and \
-    newhand[index] == newhand[index+1] == newhand[index+2]:
-        flag += 1
-    if flag == 1:
-        return True
-    return False
-
-
 
 def is_onepair(hand):
     '''One pair, or simply a pair, is a poker hand containing two cards
@@ -166,7 +149,7 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
         return 8
-    if is_fullhouse(hand):
+    if is_threeofakind(hand) and is_onepair(hand):
         return 7
     if is_flush(hand):
         return 6
