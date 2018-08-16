@@ -126,22 +126,11 @@ def is_fourofakind(hand):
         return True
     return False
 
-def is_fiveofakind(hand):
-    '''Five of a kind is a poker hand containing five cards of the same rank'''
-    flag = 0
-    newhand = sorted(sort(hand))
-    length = len(newhand)
-    for index in range(length - 3):
-        if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3] ==newhand[index+4]:
-            flag += 1
-    if flag == 1:
-        return True
-    return False
 
 def is_highcard(hand):
     '''High card, also known as no pair or simply nothing, is a poker hand containing five cards not all of
     sequential rank or of the same suit'''
-    flag
+    flag = 0
 
 
 def sort(hand):
@@ -188,21 +177,21 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return 1
     if is_fullhouse(hand):
-        return 7
+        return 3
     if is_flush(hand):
-        return 6
+        return 4
     if is_straight(hand):
         return 5
     if is_fourofakind(hand):
-        return 4
-    if is_threeofakind(hand):
-        return 3
-    if is_twopair(hand):
         return 2
+    if is_threeofakind(hand):
+        return 6
+    if is_twopair(hand):
+        return 7
     if is_onepair(hand):
-        return 1
+        return 8
     return 0
 
 def poker(hands):
@@ -223,7 +212,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key=hand_rank)
+    return min(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
