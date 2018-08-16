@@ -60,7 +60,9 @@ def is_onepair(hand):
     '''One pair, or simply a pair, is a poker hand containing two cards
     of the same rank and three cards of three other ranks (the kickers)'''
     newhand = sorted(sort(hand))
-    sethand = set(newhand)
+    print(newhand)
+    sethand = set(sorted(newhand))
+    print(sethand)
     length1 = len(newhand)
     length2 = len(sethand)
     if length1 - length2 == 1:
@@ -101,10 +103,11 @@ def is_highcard(hand):
     not all of sequential rank or of the same suit'''
     #flag = 0
     newhand = sorted(sort(hand))
-    length = len(newhand)
-    if length == 5 and not is_flush(hand):
-        return max(newhand)/100
-    return False
+    return max(newhand)
+    # length = len(newhand)
+    # if length == 5 and not is_flush(hand):
+    #     return max(newhand)/100
+    # return False
     # for index in range(length):
     #     if newhand[index] == max(newhand):
     #         flag = 1
