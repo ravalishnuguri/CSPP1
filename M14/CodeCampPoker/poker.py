@@ -119,7 +119,7 @@ def is_fourofakind(hand):
     flag = 0
     newhand = sorted(sort(hand))
     length = len(newhand)
-    for index in range(length - 1):
+    for index in range(length - 3):
         if newhand[index] == newhand[index+1] == newhand[index+2] == newhand[index+3]:
             flag += 1
     if flag == 1:
