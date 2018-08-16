@@ -104,7 +104,7 @@ def is_highcard(hand):
     print(newhand)
     length = len(newhand)
     print(max(newhand))
-    for index in range(length):
+    for index in range(length - 1):
         if newhand[index] == max(newhand):
             flag = 1
     if flag == 1:
