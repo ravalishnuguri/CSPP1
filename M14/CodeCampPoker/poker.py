@@ -211,6 +211,7 @@ def hand_rank(hand):
     if is_onepair(hand):
         print("onepair")
         return 1
+    print("no hand")
     return 0
 
 def poker(hands):
