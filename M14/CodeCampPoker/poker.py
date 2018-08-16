@@ -14,21 +14,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    newhand = []
-    for index in range(len(hand)):
-        if hand[index][0] == 'A':
-            newhand.append(14)
-        elif hand[index][0] == 'K':
-            newhand.append(13)
-        elif hand[index][0] == 'Q':
-            newhand.append(12)
-        elif hand[index][0] == 'J':
-            newhand.append(11)
-        elif hand[index][0] == 'T':
-            newhand.append(10)
-        else:
-            newhand.append(int(hand[index][0]))
-    newhand.sort()
+    newhand = sorted(sort(hand))
     for index in range(len(hand) - 1):
         if newhand[index+1] - newhand[index] != 1:
             return False
