@@ -59,17 +59,11 @@ def  is_twopair(hand):
 def is_onepair(hand):
     '''One pair, or simply a pair, is a poker hand containing two cards
     of the same rank and three cards of three other ranks (the kickers)'''
-    flag = 0
     newhand = sorted(sort(hand))
     sethand = set(newhand)
     length1 = len(newhand)
     length2 = len(sethand)
-    maximum = newhand[length1 - 1]
     if length1 - length2 == 1:
-        flag = 1
-    if maximum == max(newhand):
-        flag = 1
-    if flag == 1:
         return True
     return False
 
