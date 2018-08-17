@@ -82,12 +82,12 @@ def tokens(data):
     return list1
 def freq(dictionary, data, index):
     '''finding out the frequency of the data'''
-    for d in data:
-        if d not in dictionary:
-            dictionary[d] = [0, 0]
-            dictionary[d][index] += 1
+    for element in data:
+        if element not in dictionary:
+            dictionary[element] = [0, 0]
+            dictionary[element][index] += 1
         else:
-            dictionary[d][index] += 1
+            dictionary[element][index] += 1
     return dictionary
 def similarity(dict1, dict2):
     '''
