@@ -13,8 +13,8 @@ def similarity(dict1, dict2):
     dict2 = dict2.lower()
     str1 = re.findall(r"\w+", dict1, re.MULTILINE)
     str2 = re.findall(r"\w+", dict2, re.MULTILINE)
-    string1 = Regex.Replace(str1, @"[\d]", string.Empty)
-    string2 = Regex.Replace(str2, @"[\d]", string.Empty)
+    string1 = Regex.Replace(str1, "[\d]", string.Empty)
+    string2 = Regex.Replace(str2, "[\d]", string.Empty)
     stop = load_stopwords("stopwords.txt")
     for index in string1:
         if index in stop:
