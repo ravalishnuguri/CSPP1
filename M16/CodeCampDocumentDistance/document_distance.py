@@ -56,20 +56,22 @@ import math
 #     return numerator/denominator
 #     # return numerator
 def calculation(dictionary):
+    '''calculation for the program'''
     num = 0
     denom1 = 0
     denom2 = 0
-    for d in dictionary:
-        num += dictionary[d][0] * dictionary[d][1]
-    for d in dictionary:
-        denom1 += dictionary[d][0] ** 2
-    for d in dictionary:
-        denom2 += dictionary[d][1] ** 2
+    for index in dictionary:
+        num += dictionary[index][0] * dictionary[index][1]
+    for index in dictionary:
+        denom1 += dictionary[index][0] ** 2
+    for index in dictionary:
+        denom2 += dictionary[index][1] ** 2
     return num/(math.sqrt(denom1) * math.sqrt(denom2))
 
 def tokens(data):
+    '''converting text file into list'''
     data = data.lower()
-    data = re.sub('[^a-z\ ]', '',data)
+    data = re.sub('[^a-z\ ]', '', data)
     swords = load_stopwords("stopwords.txt")
     data = data.strip().split(" ")
     list1 = []
@@ -78,13 +80,14 @@ def tokens(data):
         if word not in swords and len(word) > 0:
             list1.append(word)
     return list1
-def freq(dictionary,data,index):
-    for d in data:
-        if d not in dictionary:
-            dictionary[d] = [0,0]
-            dictionary[d][index] += 1
+def freq(dictionary, data, index):
+    '''finding out the frequency of the data'''
+    for index in data:
+        if data not in dictionary:
+            dictionary[data] = [0, 0]
+            dictionary[data][index] += 1
         else:
-            dictionary[d][index] += 1
+            dictionary[data][index] += 1
     return dictionary
 def similarity(dict1, dict2):
     '''
@@ -93,20 +96,20 @@ def similarity(dict1, dict2):
     dictionary = {}
     dict1 = tokens(dict1)
     dict2 = tokens(dict2)
-    dictionary = freq(dictionary,dict1,0)
-    dictionary = freq(dictionary,dict2,1)
+    dictionary = freq(dictionary, dict1, 0)
+    dictionary = freq(dictionary, dict2, 1)
     result = calculation(dictionary)
     return result
 
 
 
-def load_stopwords(filename):
+def load_stopwords(_):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(_, 'r') as _:
+        for line in _:
             stopwords[line.strip()] = 0
     return stopwords
 
