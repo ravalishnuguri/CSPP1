@@ -7,11 +7,8 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    import re
-    d1 = ""
-    d2 = ""
-    d1 = dict1
-    d2 = dict2
+    dict1 = dict1.lower()
+    dict22 = dict2.lower()
     # str1 =  re.sub("[^a-z\]", "", dict1)
     # str2 = re.sub("[^a-z\]", "", dict2)
     # apple = re.sub(r'[^a-zA-Z]', '', d1).lower().strip().split()
