@@ -11,22 +11,22 @@ def similarity(dict1, dict2):
     #   return {}
     dict1 = dict1.lower()
     dict2 = dict2.lower()
-    str1 = re.findall(r"\w+", dict1, re.MULTILINE)
-    str2 = re.findall(r"\w+", dict2, re.MULTILINE)
-    string1 = re.Replace(str1, "[\d]", string.Empty)
-    string2 = re.Replace(str2, "[\d]", string.Empty)
+    # str1 = re.findall(r"\w+", dict1, re.MULTILINE)
+    # str2 = re.findall(r"\w+", dict2, re.MULTILINE)
+    str1 = re.sub(r'[^a-zA-Z]', '', dict1).strip().split()
+    str2 = re.sub(r'[^a-zA-Z]', '', dict2).strip().split()
     stop = load_stopwords("stopwords.txt")
-    for index in string1:
+    for index in str1:
         if index in stop:
-            string1.remove(index)
-    for index in string2:
+            str1.remove(index)
+    for index in str2:
         if index in stop:
-            string2.remove(index)
+            str2.remove(index)
 
     freq1 = {}
-    freq1 = collections.Counter(string1)
+    freq1 = collections.Counter(str1)
     freq2 = {}
-    freq2 = collections.Counter(string2)
+    freq2 = collections.Counter(str2)
     denominator1 = 0
     denominator2 = 0
     numerator = sum(freq1[word]*freq2[word] for word in freq1)
