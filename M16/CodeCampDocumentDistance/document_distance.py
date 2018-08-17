@@ -26,10 +26,12 @@ def similarity(dict1, dict2):
     #         str1[word] += string1[word]
     # print(str1)
     stop = load_stopwords("stopwords.txt")
-    for index in str1:
+    temp1 = str1.copy()
+    temp2 = str2.copy()
+    for index in temp1:
         if index in stop:
             str1.remove(index)
-    for index in str2:
+    for index in temp2:
         if index in stop:
             str2.remove(index)
     # print(str1)
@@ -40,7 +42,7 @@ def similarity(dict1, dict2):
     freq2 = {}
     freq2 = collections.Counter(str2)
     # print(freq2)
-    
+
     denominator1 = 0
     denominator2 = 0
     numerator = sum(freq1[word]*freq2[word] for word in freq1)
