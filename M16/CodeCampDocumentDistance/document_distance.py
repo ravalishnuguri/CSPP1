@@ -14,10 +14,10 @@ def similarity(dict1, dict2):
     dict1 = dict1.lower()
     dict2 = dict2.lower()
 
-    str1 = re.sub(r'[^a-z]', '', dict1).split()
-    str2 = re.sub(r'[^a-z]', '', dict2).split()
-    # str1 = re.findall(r"\w+", dict1, re.MULTILINE)
-    # str2 = re.findall(r"\w+", dict2, re.MULTILINE)
+    # str1 = re.sub(r'[^a-z]', '', dict1).split()
+    # str2 = re.sub(r'[^a-z]', '', dict2).split()
+    str1 = re.findall(r"[a-z]", dict1, re.MULTILINE)
+    str2 = re.findall(r"[a-z]", dict2, re.MULTILINE)
     # str1 = re.sub(r'^[0-9]+', '', string1)
     # str2 = re.sub(r'^[0-9]+', '', string2)
     # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
