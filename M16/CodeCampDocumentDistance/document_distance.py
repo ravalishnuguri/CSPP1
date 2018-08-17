@@ -9,8 +9,8 @@ def similarity(dict1, dict2):
     '''
     # if load_stopwords(stopwords) in (dict1, dict2):
     #   return {}
-    dict1 = dict1.lower()
-    dict2 = dict2.lower()
+    dict1 = sorted(dict1.lower())
+    dict2 = sorted(dict2.lower())
     str1 = re.findall(r"\w+", dict1, re.MULTILINE)
     str2 = re.findall(r"\w+", dict2, re.MULTILINE)
     stop = load_stopwords("stopwords.txt")
