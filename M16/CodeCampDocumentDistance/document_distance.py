@@ -9,13 +9,13 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    new1 = dict1.lower()
-    new2 = dict2.lower()
+    dict1 = dict1.lower()
+    dict2 = dict2.lower()
 
     # str1 = re.sub(r'[^a-z]', '', dict1).split()
     # str2 = re.sub(r'[^a-z]', '', dict2).split()
-    str1 = re.sub(r'[^a-zA-Z ]', '',  new1).strip().split()
-    str2 = re.sub(r'[^a-zA-Z ]', '',  new2).strip().split()
+    str1 = re.findall(r"[a-zA-Z]+", dict1, re.MULTILINE)
+    str2 = re.findall(r"[a-zA-Z]+", dict2, re.MULTILINE)
     # str1 = re.sub(r'^[0-9]+', '', string1)
     # str2 = re.sub(r'^[0-9]+', '', string2)
     # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -32,16 +32,15 @@ def similarity(dict1, dict2):
     for index in str2:
         if index in stop:
             str2.remove(index)
-    # print(str1)
-    # print(str2)
+    print(str1)
+    print(str2)
 
     freq1 = {}
     freq1 = collections.Counter(str1)
     freq2 = {}
     freq2 = collections.Counter(str2)
-    # print(freq1)
-    # print(freq2)
-
+    print(freq2)
+    
     denominator1 = 0
     denominator2 = 0
     numerator = sum(freq1[word]*freq2[word] for word in freq1)
