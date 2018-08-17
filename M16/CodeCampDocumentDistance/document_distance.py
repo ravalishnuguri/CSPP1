@@ -95,7 +95,6 @@ def similarity(dict1, dict2):
     dict2 = tokens(dict2)
     dictionary = freq(dictionary,dict1,0)
     dictionary = freq(dictionary,dict2,1)
-    print(dictionary)
     result = calculation(dictionary)
     return result
 
