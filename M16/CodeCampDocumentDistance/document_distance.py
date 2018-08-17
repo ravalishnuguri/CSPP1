@@ -7,16 +7,17 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    # if load_stopwords(stopwords) in (dict1, dict2):
-    #   return {}
     str1 = []
     str2 = []
     dict1 = dict1.lower()
     dict2 = dict2.lower()
-    string1 = re.findall(r"\w+", dict1, re.MULTILINE)
-    string2 = re.findall(r"\w+", dict2, re.MULTILINE)
-    str1 = re.sub(r'^[0-9]+', '', string1)
-    str2 = re.sub(r'^[0-9]+', '', string2)
+
+    # str1 = re.sub(r'[^a-zA-z]','',dict1).strip().split(" ")
+    # print(str1)
+    str1 = re.findall(r"\w+", dict1, re.MULTILINE)
+    str2 = re.findall(r"\w+", dict2, re.MULTILINE)
+    # str1 = re.sub(r'^[0-9]+', '', string1)
+    # str2 = re.sub(r'^[0-9]+', '', string2)
     # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     # for word in string1:
     #     if word in numbers:
