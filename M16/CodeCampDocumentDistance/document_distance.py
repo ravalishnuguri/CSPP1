@@ -32,9 +32,6 @@ def similarity(dict1, dict2):
     for index in str2:
         if index in stop:
             str2.remove(index)
-    print(str1)
-    print(str2)
-
     freq1 = {}
     freq1 = collections.Counter(str1)
     freq2 = {}
