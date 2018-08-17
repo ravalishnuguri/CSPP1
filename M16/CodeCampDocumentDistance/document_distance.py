@@ -9,13 +9,13 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dict1 = dict1.lower()
-    dict2 = dict2.lower()
+    new1 = dict1.lower()
+    new2 = dict2.lower()
 
     # str1 = re.sub(r'[^a-z]', '', dict1).split()
     # str2 = re.sub(r'[^a-z]', '', dict2).split()
-    str1 = re.sub(r'[^a-zA-Z ]', dict1).strip().split()
-    str2 = re.sub(r'[^a-zA-Z ]', dict2).strip().split()
+    str1 = re.sub(r'[^a-zA-Z ]', '',  new1).strip().split()
+    str2 = re.sub(r'[^a-zA-Z ]', '',  new2).strip().split()
     # str1 = re.sub(r'^[0-9]+', '', string1)
     # str2 = re.sub(r'^[0-9]+', '', string2)
     # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
