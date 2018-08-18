@@ -62,10 +62,10 @@ def build_search_index(docs):
     print(docs)
     newsearch = []
     docs1 = word_list(docs)
-    print(docs1)
+    # print(docs1)
     freq1 = {}
     freq1 = collections.Counter(docs1)
-    print(freq1)
+    # print(freq1)
     wordlist = {}
 
     # initialize a search index (an empty dictionary)
@@ -74,7 +74,6 @@ def build_search_index(docs):
     for word in docs1:
         if word in docs:
             wordlist[word] += (docs[word], freq1[word])
-    print(wordlist)
 
 
 
