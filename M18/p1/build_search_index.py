@@ -73,9 +73,9 @@ def build_search_index(docs):
     # iterate through all the docs
     for word in docs1:
         if word in docs:
-            wordlist[word] += (docs[word],freq1[word])
+            wordlist[word] += (docs[word], freq1[word])
     print(wordlist)
-            
+
 
 
     # keep track of doc_id which is the list index corresponding the document
