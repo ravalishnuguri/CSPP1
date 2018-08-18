@@ -59,7 +59,7 @@ def build_search_index(docs):
     '''
         Process the docs step by step as given below
     '''
-    print(docs)
+    # print(docs)
     newsearch = []
     docs1 = word_list(docs)
     # print(docs1)
