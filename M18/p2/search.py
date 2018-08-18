@@ -28,6 +28,7 @@
 
     Note: PyLint score need not be 10/10. Anything above 9.5 is good.
 '''
+import re
 
 def search(search_index, query):
     '''
@@ -37,13 +38,20 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
+    new = search_index
+    # print(new)
     newquery = ""
-    newquery= "".join(query)
-    print()
+    newquery = "".join(query)
     newquery = newquery.lower()
     newquery = re.findall(r"\w+", newquery, re.MULTILINE)
-    print(newquery)
-    pass
+    # print(newquery)
+    length = len(newquery)
+    for word in range(length-1):
+        if newquery[word] in new:
+            print(new[newquery[word]])
+        else:
+            print(set())
+
 
 def process_queries(search_index, queries):
     '''
@@ -51,8 +59,10 @@ def process_queries(search_index, queries):
         iterate through all the queries and call the search function
         print the results returned by search function
     '''
-    print(queries)
-    pass
+    # print(search_index)
+    # print(queries)
+    for word in queries:
+        search(search_index, word)
 
 def main():
     '''
@@ -63,7 +73,7 @@ def main():
 
     # read the number of search queries
     lines = int(input())
-    
+
     # read the search queries into a list
     queries = []
     for i in range(lines):
