@@ -1,1 +1,1 @@
-qtwjr nuxzr utwjr
+(10, 'Hello, World!')

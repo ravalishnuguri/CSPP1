@@ -1,1 +1,1 @@
-defgh
+(2, 'hello')
