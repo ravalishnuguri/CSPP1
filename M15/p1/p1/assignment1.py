@@ -247,15 +247,15 @@ class CiphertextMessage():
         and the decrypted message text using that shift value
         '''
         for _ in range(27):
-            message1 = PlaintextMessage(self.message_text, _)
-            message2 = message1.get_message_text_encrypted()
-            count = 0
-            for word in message2.split(' '):
+            msg1 = PlaintextMessage(self.message_text, _)
+            msg2 = msg1.get_message_text_encrypted()
+            flag = 0
+            for word in msg2.split(' '):
                 if is_word(self.valid_words, word):
-                    count += 1
-            if self.max_words < count:
-                self.max_words = count
-                self.decrypted = (26-_, message2)
+                    flag += 1
+            if self.max_words < flag:
+                self.max_words = flag
+                self.decrypted = (26-_, msg2)
         return self.decrypted
 
 
