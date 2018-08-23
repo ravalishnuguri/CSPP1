@@ -54,12 +54,11 @@ def read_matrix(size):
     rows = int(size[0])
     columns = int(size[1])
     count = 0
-    length = len(row)
     mtx = []
     for _ in range(0, rows, 1):
         row = input().split()
         mtx.append(row)
-        count += length
+        count += len(row)
     if count != rows * columns:
         print("Error: Invalid input for the matrix")
     else:
