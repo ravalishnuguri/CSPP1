@@ -35,13 +35,12 @@ def add_matrix(mtx1, mtx2):
     if length1 != length2:
         print("Error: Matrix shapes invalid for addition")
         return None
-    else:
-        res = copy.deepcopy(mtx1)
-        for i in range(0, length2, 1):
-            for j in range(0, len(mtx2[i]), 1):
-                res[i][j] = int(res[i][j])
-                res[i][j] += int(mtx2[i][j])
-        return res
+    res = copy.deepcopy(mtx1)
+    for i in range(0, length2, 1):
+        for j in range(0, len(mtx2[i]), 1):
+            res[i][j] = int(res[i][j])
+            res[i][j] += int(mtx2[i][j])
+    return res
 
 def read_matrix(size):
     '''
