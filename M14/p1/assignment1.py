@@ -40,6 +40,7 @@
 # Remember that spaces and punctuation should not be changed by the cipher.
 
 # Helper code
+import string
 def load_words(file_name):
     '''
     file_name (string): the name of the file containing
@@ -63,9 +64,46 @@ def load_words(file_name):
 WORDLIST_FILENAME = 'words.txt'
 # Helper code End
 
+class Message:
+    '''msg class'''
+    def __init__(self, text):
+        self.message_text = text
+        self.valid_words = load_words(WORDLIST_FILENAME)
 
-### Paste your implementation of the Message class here
-        
+    def get_message_text(self):
+        '''msg text'''
+        return self.message_text
+
+    def get_valid_words(self):
+        '''right words'''
+        return self.valid_words.copy()
+
+    def build_shift_dict(self, shift):
+        '''build shift'''
+        lower_keys = list(string.ascii_lowercase)
+        lower_values = list(string.ascii_lowercase)
+        shift_lower_values = lower_values[shift:] + lower_values[:shift]
+
+        upper_keys = list(string.ascii_uppercase)
+        upper_values = list(string.ascii_uppercase)
+        upper_shift_values = upper_values[shift:] + upper_values[:shift]
+
+        full_keys = lower_keys + upper_keys
+        full_values = shift_lower_values + upper_shift_values
+        self.shift_dict = dict(zip(full_keys, full_values))
+        return self.shift_dict
+
+    def apply_shift(self, shift):
+        '''apply shift'''
+        newtext = []
+        for word in self.message_text:
+            if word in self.build_shift_dict(shift).keys():
+                newtext.append(self.build_shift_dict(shift)[word])
+
+                continue
+            else:
+                newtext.append(word)
+        return ''.join(newtext)
 
 def main():
     '''
