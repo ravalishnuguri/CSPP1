@@ -40,7 +40,7 @@ def load_words(file_name):
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
+class Message():
     ''' Grader's Implementation of Message Object '''
 
     ### DO NOT MODIFY THIS METHOD ###
@@ -131,7 +131,32 @@ class Message(object):
 
 
 ### Paste your implementation of the `PlaintextMessage` class here
+class PlaintextMessage():
+    ''' PlaintextMessage class '''
+    def __init__(self, text, shift):
+        '''init method'''
+        self.text = text
+        self.shift = shift
+        self.valid_words = load_words("words.txt")
+        message = Message(text)
+        self.encrypting_dict = message.build_shift_dict(shift)
+        self.message_text_encrypted = message.apply_shift(shift)
+    def get_shift(self):
+        '''get shift'''
+        return self.shift
+    def get_encrypting_dict(self):
+        '''get encypting'''
+        return self.encrypting_dict
 
+    def get_message_text_encrypted(self):
+        '''get message'''
+        return self.message_text_encrypted
+    def change_shift(self, shift):
+        '''change shift'''
+        self.shift = shift
+        message = Message(self.text)
+        self.encrypting_dict = message.build_shift_dict(shift)
+        self.message_text_encrypted = message.apply_shift(shift)
 
 
 def main():
