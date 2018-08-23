@@ -76,7 +76,7 @@ def main():
     mtx1 = read_matrix(number)
     number1 = input().split(',')
     mtx2 = read_matrix(number1)
-    if mtx1 == None or mtx2 == None:
+    if mtx1 is None or mtx2 is None:
         return None
     print(add_matrix(mtx1, mtx2))
     print(mult_matrix(mtx1, mtx2))
