@@ -13,7 +13,7 @@ def mult_matrix(mtx1, mtx2):
         print("Error: Matrix shapes invalid for mult")
         return None
     newlist1 = []
-    for i in range(0, length, 1):
+    for i in range(0, len(mtx1), 1):
         newlist2 = []
         for j in range(0, len(mtx2[0]), 1):
             result = 0
