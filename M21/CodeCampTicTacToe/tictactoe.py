@@ -6,7 +6,7 @@ def wincheck(row):
         for j in range(len(row[i])):
             if i == j:
                 new1.add(row[i][j])
-            if sum(i + j) == len(row-1):
+            if sum(len(i) + j) == len(row-1):
                 new2.add(row[i][j])
     if len(new1) == 1:
         if 'x' in new1:
