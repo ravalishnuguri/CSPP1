@@ -11,11 +11,12 @@ def wincheck(row):
     if len(new1) == 1:
         if 'x' in new1:
             return x
-        return o
+        return "o"
     if len(new2) == 1:
         if 'x' in new2:
             return x
-        return o
+        return "o"
+    return "draw"
 
 
 def gamerules(row):
