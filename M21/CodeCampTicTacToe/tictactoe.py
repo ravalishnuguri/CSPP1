@@ -75,8 +75,7 @@ def main():
         matrix = list(map(str, matrix.split(' ')))
         row.append(matrix)
     # print(row)
-    row = gamerules(row)
-    print(row)
+    print(gamerules(row)
 
 
 
