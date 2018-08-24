@@ -47,7 +47,7 @@ def gamerules(row):
     countofo = 0
     countofdot = 0
     for index in row:
-        if len(i) != 3:
+        if len(index) != 3:
             return "invalid game"
         if palyer1 in index:
             countofx += index.count(palyer1)
