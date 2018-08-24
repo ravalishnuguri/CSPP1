@@ -21,8 +21,8 @@ def wincheck(row):
 
 def gamerules(row):
     for i in row:
-        len(i) != 3
-        return "invalid game"
+        if len(i) != 3:
+            return "invalid game"
     countofx = index.count("x")
     countofo = index.count("o")
     countofdot = index.count(".")
