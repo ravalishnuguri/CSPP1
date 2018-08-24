@@ -14,7 +14,7 @@ def wincheck(row):
         return "o"
     if len(new2) == 1:
         if 'x' in new2:
-            return x
+            return "x"
         return "o"
     return "draw"
 
