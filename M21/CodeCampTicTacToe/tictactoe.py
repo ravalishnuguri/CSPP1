@@ -1,10 +1,13 @@
+'''tic-tac-toe game'''
 def loop(seti):
+    '''checking value of elements in a set'''
     if 'x' in seti:
         return 'x'
     return 'o'
 
 
 def wincheck(game):
+    '''checking the game rules for winner'''
     new1 = set()
     new2 = set()
     new3 = set()
@@ -41,6 +44,7 @@ def wincheck(game):
     return "draw"
 
 def gamerules(row):
+    '''checking if the given input is right or wrong'''
     palyer1 = 'x'
     player2 = 'o'
     countofx = 0
