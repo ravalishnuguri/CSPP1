@@ -56,9 +56,9 @@ def gamerules(row):
         if palyer1 in index:
             countofx += index.count(palyer1)
         if player2 in index:
-            countofo = index.count(player2)
+            countofo += index.count(player2)
         if '.' in index:
-            countofdot = index.count('.')
+            countofdot += index.count('.')
     if countofx + countofo + countofdot != 9:
         return "invalid input"
     if abs(countofx - countofo) != 1:
@@ -72,7 +72,7 @@ def main():
     row = []
     for _ in range(3):
         matrix = input()
-        matrix = list(map(str, matrix.split()))
+        matrix = list(map(str, matrix.split(' ')))
         row.append(matrix)
     # print(row)
     print(gamerules(row))
