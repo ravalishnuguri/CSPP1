@@ -41,7 +41,7 @@ def main():
         matrix = list(map(str, matrix.split()))
         row.append(matrix)
     # print(row)
-    print(gamerules(row))
+    gamerules(row)
     print(wincheck(row))
 
 
