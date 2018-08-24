@@ -75,7 +75,7 @@ def main():
         matrix = list(map(str, matrix.split(' ')))
         row.append(matrix)
     # print(row)
-    print(gamerules(row)
+    print(gamerules(row))
 
 
 
