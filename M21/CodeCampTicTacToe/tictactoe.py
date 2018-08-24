@@ -1,10 +1,10 @@
-def loop(set):
+def loop(seti):
     if 'x' in seti:
         return 'x'
     return 'o'
 
 
-def winnercheck(game):
+def wincheck(game):
     new1 = set()
     new2 = set()
     new3 = set()
@@ -20,7 +20,7 @@ def winnercheck(game):
             newt = set(game[i])
             if len(newt) == 1:
                 if 'x' in newt:
-                    return x
+                    return 'x'
                 return "o"
             if j == 0:
                 new3.add(game[i][j])
@@ -59,7 +59,7 @@ def gamerules(row):
         return "invalid input"
     if abs(countofx - countofo) != 1:
         return "invalid game"
-    return winnercheck(game)
+    return wincheck(row)
 
 
 
