@@ -72,7 +72,7 @@ def main():
     row = []
     for _ in range(3):
         matrix = input()
-        matrix = list(map(str, matrix.split(' ')))
+        matrix = list(map(str, matrix.split()))
         row.append(matrix)
     # print(row)
     print(gamerules(row))
