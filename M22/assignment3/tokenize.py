@@ -15,7 +15,7 @@ def tokenize(string):
 	# list1 = []
 	# for word in newstring1:
 	# 	list1.append(word)
-	print(li)
+	# print(li)
 
 	freq1 = {}
 	freq1 = collections.Counter(li)
