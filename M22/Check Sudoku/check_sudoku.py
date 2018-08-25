@@ -19,7 +19,7 @@ def check_sudoku(sudoku):
     #         if sudoku[index[j]] >= 0 and sudoku[index[j]] <= 9:
     #             return True
     # return False
-    return True
+    return False
 
 
 def main():
