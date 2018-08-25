@@ -46,6 +46,7 @@ def word_list(text):
     newtext = newtext.lower()
     # newtext = re.sub(r"[^\w]", " ",  text).split(' ')
     newtext = re.findall("\w+", newtext, re.MULTILINE)
+    print(newtext)
     # newtext = re.sub('[^a-z\ ]', '', text).lower().split(' ')
     stop = load_stopwords("stopwords.txt")
     list1 = []
@@ -62,10 +63,10 @@ def build_search_index(docs):
     # print(docs)
     newsearch = []
     docs1 = word_list(docs)
-    # print(docs1)
+    print(docs1)
     freq1 = {}
     freq1 = collections.Counter(docs1)
-    # print(freq1)
+    print(freq1)
     wordlist = {}
 
     # initialize a search index (an empty dictionary)
