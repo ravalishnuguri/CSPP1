@@ -12,12 +12,12 @@ def tokenize(string):
     newstring1 = re.sub('[^a-zA-Z0-9]', ' ', newtext)
     # print(list(newstring1))
     li = list(newstring1.split(" "))
+    print(li)
     # list1 = []
     # for word in newstring1:
     #   list1.append(word)
     # print(li)
 
-    freq1 = {}
     freq1 = collections.Counter(li)
     # for word in freq1:
 
