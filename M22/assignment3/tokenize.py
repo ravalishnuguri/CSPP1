@@ -3,8 +3,6 @@ Write a function to tokenize a given string and return a dictionary with the fre
 each word
 '''
 import re
-
-
 def word_count(string):
     '''for counting the words'''
     counts = dict()
