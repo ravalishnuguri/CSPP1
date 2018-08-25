@@ -8,12 +8,17 @@ def tokenize(string):
 	'''we are counting the number of words in the string'''
 	newtext = ""
 	newtext = "".join(string)
-	newtext = newtext.lower()
-	# newstring1 = re.sub('[^a-z]', '', newtext)
-	newstring1 = re.sub('[^a-zA-Z]', '', newtext)
-	# print(newstring1)
+	newtext = newtext.strip()
+	newstring1 = re.sub('[^a-zA-Z]', ' ', newtext)
+	# print(list(newstring1))
+	li = list(newstring1.split(" "))
+	# list1 = []
+	# for word in newstring1:
+	# 	list1.append(word)
+	print(li)
+
 	freq1 = {}
-	freq1 = collections.Counter(newstring1)
+	freq1 = collections.Counter(li)
 	print(freq1)
     
             

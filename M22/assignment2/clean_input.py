@@ -7,7 +7,7 @@ def clean_string(string):
     '''function for cleaning a string'''
     newstring = string.lower().strip()
     newstring1 = re.sub('[^a-z0-9]', '', newstring)
-    # return newstring1
+    newstring1
     newstring2 = re.sub(r"\s+", "", newstring1,)
     return newstring2
 

@@ -63,7 +63,6 @@ def build_search_index(docs):
     # print(docs)
     newsearch = []
     docs1 = word_list(docs)
-    print(docs1)
     freq1 = {}
     freq1 = collections.Counter(docs1)
     print(freq1)
