@@ -10,7 +10,7 @@ def tokenize(string):
 	newtext = "".join(string)
 	newtext = newtext.lower()
 	# newstring1 = re.sub('[^a-z]', '', newtext)
-	newstring1 = re.findall("\w+", newtext, re.MULTILINE)
+	newstring1 = re.sub('[^a-zA-Z]', '' newtext)
 	# print(newstring1)
 	freq1 = {}
 	freq1 = collections.Counter(newstring1)
