@@ -8,6 +8,10 @@ def main():
     number = int(input())
     sum1 = 1
     count = 1
+    if number < 0:
+        number = -number
+    elif number == 0:
+        sum1 = 0
     while number != 0:
         if number == 0:
             count = 1
